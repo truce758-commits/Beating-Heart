@@ -1,39 +1,34 @@
 # 跳动爱心星空动画 (Beating Heart with Starry Night)
 
-这是一个基于 React + Vite + Canvas 开发的数学艺术动画，包含参数方程生成的跳动爱心、粒子系统以及动态星空背景。
+这是一个基于 React 19 + Vite + Canvas 开发的数学艺术动画。
 
-## 本地运行指南
+## 🚀 部署到 Vercel (GitHub 同步)
 
-### 1. 安装依赖
-```bash
-npm install
-```
+### 第一步：上传到 GitHub
+1. 在 GitHub 上创建一个新的公开/私有仓库。
+2. 在本地项目根目录运行：
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit"
+   git branch -M main
+   git remote add origin <你的GitHub仓库地址>
+   git push -u origin main
+   ```
 
-### 2. 启动开发环境
-```bash
-npm run dev
-```
-访问浏览器显示的地址（默认 `http://localhost:3000`）。
+### 第二步：连接到 Vercel
+1. 登录 [Vercel 官网](https://vercel.com/)。
+2. 点击 **"Add New" -> "Project"**。
+3. 导入你刚才创建的 GitHub 仓库。
+4. **配置项目 (Framework Preset)**: Vercel 会自动识别为 **Vite**。
+5. **环境变量 (可选)**: 如果你以后使用了 Gemini API，请在 "Environment Variables" 中添加 `GEMINI_API_KEY`。
+6. 点击 **"Deploy"**。
 
-### 3. 构建生产版本
-```bash
-npm run build
-```
+## 🛠 本地开发
+1. `npm install`
+2. `npm run dev`
 
-## 项目结构
-- `src/App.tsx`: 核心逻辑，包含心跳数学公式、粒子生成器和 Canvas 渲染循环。
-- `src/index.css`: 样式配置，包含 Tailwind CSS 和自定义字体。
-- `src/main.tsx`: React 入口文件。
-
-## 关键参数修改
-- **心跳频率**: 搜索 `frameRef.current / 10` 修改分母。
-- **爱心颜色**: 修改 `HEART_COLOR` 常量。
-- **背景颜色**: 修改 `BG_COLOR` 常量。
-- **祝福语**: 修改 `<h2>` 标签内的文本。
-
-## 技术栈
-- **React 19**: UI 框架
-- **Vite**: 构建工具
-- **Tailwind CSS**: 样式处理
-- **Motion**: 进场动画
-- **Canvas API**: 高性能粒子渲染
+## 📝 修改指南
+- **心跳速度**: 修改 `src/App.tsx` 中的 `frameRef.current / 10`。
+- **祝福语**: 修改 `src/App.tsx` 中的 `<h2>` 文本。
+- **颜色**: 修改 `HEART_COLOR` 常量。
